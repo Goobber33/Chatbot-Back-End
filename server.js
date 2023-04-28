@@ -1,16 +1,30 @@
 const express = require('express');
 const axios = require('axios');
 const dotenv = require('dotenv');
-const cors = require('cors');
 const path = require('path');
 
 dotenv.config();
 
 const app = express();
+
+// Enable CORS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested, Content-Type, Accept Authorization'
+  );
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'POST, PUT, PATCH, GET, DELETE');
+    return res.status(200).json({});
+  }
+  next();
+});
+
 app.use(express.json());
-app.use(cors({ origin: '*' }));
+
 const ALPHA_VANTAGE_API_KEY = process.env.ALPHA_VANTAGE_API_KEY;
-const PORT = process.env.NODE_PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 const fetchStockPrice = async (symbol) => {
   const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${ALPHA_VANTAGE_API_KEY}`;
