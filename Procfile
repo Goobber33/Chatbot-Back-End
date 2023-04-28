@@ -1,1 +1,1 @@
-web: concurrently "node server.js" "gunicorn app:app"
+web: concurrently "gunicorn app:app" "node server.js"
