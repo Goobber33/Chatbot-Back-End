@@ -1,1 +1,2 @@
-web: concurrently "gunicorn app:app" "node server.js"
+web: gunicorn app:app
+worker: python app.py
