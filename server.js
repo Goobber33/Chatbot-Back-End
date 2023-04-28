@@ -42,12 +42,15 @@ app.get('/api/stock/:symbol', async (req, res) => {
 
 // Serve React app in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'build')));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-}
+    // Serve static files from the React app
+    app.use(express.static(path.join(__dirname, 'build')));
+  
+    // Serve the index.html file for any request that doesn't match the API routes
+    app.get(/^(?!\/(api|chatbot)).*$/, (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    });
+  }
+  
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
