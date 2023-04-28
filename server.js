@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 const ALPHA_VANTAGE_API_KEY = process.env.ALPHA_VANTAGE_API_KEY;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.NODE_PORT || 5000;
 
 const fetchStockPrice = async (symbol) => {
   const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${ALPHA_VANTAGE_API_KEY}`;
