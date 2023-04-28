@@ -8,7 +8,15 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// CORS configuration
+const corsOptions = {
+  origin: '*',
+  methods: 'GET,POST',
+  allowedHeaders: 'Content-Type,Authorization',
+};
+
+app.use(cors(corsOptions));
 
 const ALPHA_VANTAGE_API_KEY = process.env.ALPHA_VANTAGE_API_KEY;
 const PORT = process.env.NODE_PORT || 5000;
