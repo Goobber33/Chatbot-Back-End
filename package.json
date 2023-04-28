@@ -1,0 +1,26 @@
+{
+  "name": "chatboxbe",
+  "version": "1.0.0",
+  "description": "\"\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goobber33/Chatbot-Back-End.git"
+  },
+  "author": "Kyle Parks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Goobber33/Chatbot-Back-End/issues"
+  },
+  "homepage": "https://github.com/Goobber33/Chatbot-Back-End#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
