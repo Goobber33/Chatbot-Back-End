@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "concurrently": "python app.py & node server.js"  },
+    "start": "concurrently \"gunicorn app:app\" \"node server.js\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Goobber33/Chatbot-Back-End.git"
