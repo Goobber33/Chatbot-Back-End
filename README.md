@@ -46,6 +46,10 @@ This will start both the Python and Node.js servers.
 - **GET /api/v1/weather/:location**: Fetch weather information for a specified location using the OpenWeather API.
 - **GET /api/v1/stock/:symbol**: Retrieve stock market data for a specified ticker symbol using the Alpha Advantage API.
 
+## Link
+
+https://goobber33.github.io/Chabot/
+
 ## Contributing 🤝
 
 If you have suggestions or improvements, feel free to open an issue or create a pull request. Your contributions are always welcome!
